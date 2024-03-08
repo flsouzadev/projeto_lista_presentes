@@ -1,0 +1,34 @@
+{% extends 'shared/base.html' %} {% load static %} {% block content %}
+
+<p class="p_formatada" style="font-size: 18px">
+    É com grande alegria que lhes convidamos para nosso chá de casa nova.
+    Ficaremos muito felizes com a sua presença! Será no dia <b>23/03/2024</b> às
+    <b>14:00h</b><br />Pedimos a gentileza que leve um prato salgado e um
+    refrigerante de sua preferência e venha se divertir com a gente!
+  </p>
+
+  <form method="post" action="{% url 'index' %}">
+    {% csrf_token %}
+    <h2>Confirmação de presença</h2>
+    <ul>
+      <li class="item">
+        <input type="radio" id="item1" name="presenca" value="sim" />
+        <label for="item1" class="style-label">Sim, estarei presente 😊</label>
+      </li>
+      <li class="item">
+        <input type="radio" id="item2" name="presenca" value="nao" />
+        <label for="item2" class="style-label"
+          >Não, infelizmente não poderei ir ☹️</label
+        >
+      </li>
+    </ul>
+    <button
+      type="submit"
+      class="btn btn-outline-primary col-12"
+      style="margin-bottom: 10px"
+    >
+      Seguir...
+    </button>
+  </form>
+
+{% endblock %}

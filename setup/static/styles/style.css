@@ -1,0 +1,90 @@
+/* styles.css */
+h1 {
+  text-align: center;
+}
+
+p {
+  font-style: italic;
+}
+
+.item {
+  list-style-type: none; /* Remove o marcador de lista */
+  margin: inherit;
+}
+
+.pagina-inicial {
+  max-width: 1440px;
+  padding: 1.5rem;
+  margin: 0 auto;
+}
+
+.banner__imagem {
+  width: 100%;
+}
+
+.row {
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: calc(-1 * var(--bs-gutter-y));
+  margin-right: calc(-0.5 * var(--bs-gutter-x));
+  margin-left: calc(-0.5 * var(--bs-gutter-x));
+}
+
+.contador_format {
+  text-align: center;
+}
+
+#contador {
+  font-size: 60px; /* Tamanho da fonte */
+  font-family: Great Vibes, BASKERVVILLE;
+  color: #3c3c3c; /* Cor da fonte */
+}
+
+.divisor {
+  border: 0;
+  height: 2px;
+  background-image: linear-gradient(
+    to right,
+    transparent,
+    rgb(113, 128, 133),
+    transparent
+  );
+  display: block;
+}
+
+.style-label {
+  margin-left: 10px;
+}
+
+.rodape {
+  background-color: #b2dafa;
+  width: 100%;
+  padding: 1rem 2rem;
+  box-sizing: border-box;
+  justify-content: center;
+  color: #ffffff;
+}
+
+.container__rodape {
+  position: relative;
+  padding: 0;
+  height: 100%;
+  display: flex;
+  align-items: center; /* Alinha verticalmente */
+  text-decoration: none; /* Remove sublinhado do link */
+}
+
+.texto__rodape {
+  margin-left: 5px; /* Espaçamento entre o ícone e o texto */
+  /* Estilos para o texto */
+}
+
+.rodape__texto {
+  font-family: Poppins, Arial;
+  font-style: normal;
+  display: flex;
+  justify-content: center;
+  color: #000000;
+}

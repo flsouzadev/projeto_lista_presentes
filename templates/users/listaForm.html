@@ -1,0 +1,28 @@
+{% extends 'shared/base.html' %} {% load static %} {% block content %}
+
+<body>
+  <form method="post">
+    {% csrf_token %}
+    <h1>ÁREA DE SERVIÇO:</h1>
+    {{ form.area_de_servico }}
+    <h1>BANHEIRO:</h1>
+    {{ form.banheiro }}
+    <h1>QUARTO:</h1>
+    {{ form.quarto }}
+    <h1>COZINHA:</h1>
+    {{ form.cozinha }}
+    <button
+      type="submit"
+      class="btn btn-outline-primary col-12"
+      style="margin-bottom: 10px"
+      style="margin: 10px"
+
+    >
+      Concluir Confirmação
+    </button>
+  </form>
+</body>
+
+<script src="{% static 'users/js/limitandoCheckbox.js' %}"></script>
+
+{% endblock %}

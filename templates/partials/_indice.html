@@ -1,0 +1,29 @@
+{% load static %}
+
+<div class="container">
+  <img
+    class="banner__imagem"
+    src="{% static 'assets/images/capa.png' %}"
+    alt="My image"
+  />
+  <br />
+  <br />
+  <hr class="divisor" />
+
+  {% comment %} Inclusão de um cronômetro para mostrar ao usuário a
+  data/minuto/segundo para o dia do evento {% endcomment %}
+  <div class="contador_format" id="contador"></div>
+
+  <hr class="divisor" />
+
+<!-- Vinculando o Bootstrap JavaScript (opcional) -->
+<script src="{% static 'users/js/contador.js' %}"></script>
+<script src="{% static 'users/js/qtdPessoas.js' %}"></script>
+<script src="{% static 'users/js/confirma-presenca.js' %}"></script>
+<script src="{% static 'users/js/limitandoCheckbox.js' %}"></script>
+
+<script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+  crossorigin="anonymous"
+></script>

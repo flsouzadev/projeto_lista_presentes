@@ -1,0 +1,30 @@
+{% extends 'shared/base.html' %} {% load static %} {% block content %}
+
+<section class="presente">
+  <form method="post" action="{% url 'presente' %}">
+    {% csrf_token %}
+    {% for field in form.visible_fields %}
+    {% comment %} {{ form.as_p }} {% endcomment %}
+    <div class="col-12 col-lg-12" style="margin-bottom: 10px; width: 50%">
+      <label for="{{ field.id_for_label }}" style="color:#00000; margin-bottom: 5px; margin-top: 5px">{{ field.label }}
+        {{ field }}
+      </div>
+      {% endfor %}
+      <div id="campos-pessoas">
+        <!-- Campos de nome e RG serão gerados dinamicamente aqui -->
+      </div>
+    <button
+      type="submit"
+      class="btn btn-outline-primary col-12"
+      style="margin-bottom: 10px"
+    >
+      Seguir para lista...
+    </button>
+  </form>
+</section>
+
+<!-- Vinculando o Bootstrap JavaScript (opcional) -->
+<script src="{% static 'users/js/qtdPessoas.js' %}"></script>
+
+
+{% endblock %}
