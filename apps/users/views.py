@@ -52,10 +52,10 @@ def confirmacao(request):
 
             if 'outros' in all_values_list:
                 if len(all_values_list) == 1:
-                    messages.add_message(request, constants.ERROR, f"{nome_presente}, por favor, entre em contato com a noiva para informar o que deseja dar de presente.")
+                    messages.add_message(request, constants.WARNING, f"{nome_presente}, por favor, por ter selecionado o item 'outros' entre em contato com a noiva para informar o que deseja dar de presente.")
                     return redirect('confirmacao')
                 else:
-                    messages.add_message(request, constants.WARNING, f"{nome_presente}, por favor, entre em contato com a noiva para informar o que deseja dar de presente.")
+                    messages.add_message(request, constants.WARNING, f"{nome_presente}, por favor, por ter selecionado o item 'outros' entre em contato com a noiva para informar o que deseja dar de presente.")
 
             if rg_presente and nome_presente and any(all_values_list):  # Verifica se todos os campos estão preenchidos
                 presenca = True
@@ -64,13 +64,6 @@ def confirmacao(request):
                 # Salvando no banco de dados
                 convidado = Convidado(nome=nome_presente, rg=rg_presente, presente=valores_selecionados, presenca=presenca)
                 convidado.save()  # Salvando no banco de dados
-
-                # Remover ou ocultar os itens selecionados da lista HTML
-                for item_id in all_values_list:
-                    if item_id != 'outros':  # Aqui você verifica se o ID é diferente de 'outros'
-                        # Adicionar a classe CSS para tracejar o item
-                        messages.add_message(request, constants.INFO, f"document.getElementById('{item_id}').classList.add('tracejado');")
-
 
                 messages.add_message(request, constants.SUCCESS, f"{nome_presente}, sua confirmação foi realizada com sucesso!")
                 
