@@ -1,73 +1,54 @@
-function toggleQuantidadePessoas() {
-    var checkboxSim = document.getElementById('item1');
-    var checkboxNao = document.getElementById('item2');
-    var divQuantidadePessoas = document.getElementById('div-quantidade-pessoas');
-    var divNomeAusente = document.getElementById('div-nome');
-    var botao1 = document.getElementById('botao-1');
-    var botao2 = document.getElementById('botao-2');
+// document.getElementById('checkbox1').addEventListener('change', function() {
+//   if (this.checked) {
+//       // Checkbox 1 está marcado, desmarcar checkbox2
+//       document.getElementById('checkbox2').checked = false;
 
+//       // Criar ou mostrar o botão especificamente para o checkbox 1
+//       var buttonContainer = document.getElementById('buttonContainer');
+//       buttonContainer.innerHTML = '<button id="button1">Botão para Checkbox 1</button>';
 
-    if (checkboxSim.checked) {
-        divQuantidadePessoas.style.display = 'block';
-        botao1.style.display = 'block';
-        botao2.style.display = 'none';
-        if (divNomeAusente) {
-            divNomeAusente.style.display = 'none';
-        }
-    } else if (checkboxNao.checked) {
-        divQuantidadePessoas.style.display = 'none';
+//       // Criar ou mostrar o input para dados numéricos
+//       var inputContainer = document.getElementById('inputContainer');
+//       inputContainer.innerHTML = '<input type="number" id="numericInput1" placeholder="Insira um número">';
+//   } else {
+//       // Checkbox 1 não está marcado
+//       // Remover o botão e o input
+//       var buttonContainer = document.getElementById('buttonContainer');
+//       buttonContainer.innerHTML = '';
 
-        botao1.style.display = 'none';
-        botao2.style.display = 'block';
+//       var inputContainer = document.getElementById('inputContainer');
+//       inputContainer.innerHTML = '';
+//   }
+// });
 
-        var quantidadePessoasInput = document.getElementById('quantidade-pessoas');
-        var quantidadePessoas = quantidadePessoasInput.value;
-        if (quantidadePessoas > 0) {
-            quantidadePessoasInput.value = 0;
-        }
-        document.getElementById('campos-pessoas').innerHTML = '';
+// document.getElementById('checkbox2').addEventListener('change', function() {
+//   if (this.checked) {
+//       // Checkbox 2 está marcado, desmarcar checkbox1
+//       document.getElementById('checkbox1').checked = false;
 
-        if (!divNomeAusente) {
-            var divNomeAusente = document.createElement('div');
-            divNomeAusente.id = 'div-nome';
-            divNomeAusente.classList.add('mb-3');
+//       // Criar ou habilitar o botão especificamente para o checkbox 2
+//       var buttonContainer = document.getElementById('buttonContainer');
+//       var button2 = document.getElementById('button2');
+//       if (button2) {
+//           button2.disabled = false;
+//       } else {
+//           buttonContainer.innerHTML += '<button id="button2" disabled>Botão para Checkbox 2</button>';
+//       }
 
-            // Cria a label e define o atributo 'for' com o ID do input correspondente
-            var labelNomeAusente = document.createElement('label');
-            labelNomeAusente.setAttribute('for', 'nome_pessoa');
-            labelNomeAusente.textContent = 'Insira seu nome para concluirmos a confirmação';
+//       // Criar ou mostrar os inputs para nome e RG
+//       var inputContainer = document.getElementById('inputContainer');
+//       inputContainer.innerHTML = '<input type="text" id="nameInput" placeholder="Nome">' +
+//                                   '<input type="text" id="rgInput" placeholder="RG">';
+//         document.getElementById('listaItens').style.display = 'none';
+//   } else {
+//       // Checkbox 2 não está marcado
+//       // Desabilitar o botão e remover os inputs
+//       var button2 = document.getElementById('button2');
+//       if (button2) {
+//           button2.disabled = true;
+//       }
 
-            // Cria o input e define o ID correspondente
-            var inputNomeAusente = document.createElement('input');
-            inputNomeAusente.setAttribute('type', 'text');
-            inputNomeAusente.setAttribute('id', 'nome_pessoa');
-            inputNomeAusente.setAttribute('name', 'nome_pessoa');
-            inputNomeAusente.setAttribute('placeholder', 'Seu Nome ');
-            inputNomeAusente.classList.add('form-control');
-            inputNomeAusente.setAttribute('style', 'margin-top: 10px');
-
-            // Adiciona a label e o input à divNomeAusente
-            divNomeAusente.appendChild(labelNomeAusente);
-            divNomeAusente.appendChild(inputNomeAusente);
-
-            document.getElementById('campo-pessoas-ausentes').appendChild(divNomeAusente);
-
-            // Insere a divNomeAusente após divQuantidadePessoas
-            divQuantidadePessoas.parentNode.insertBefore(divNomeAusente, divQuantidadePessoas.nextSibling);
-        } else {
-            divNomeAusente.style.display = 'block';
-        }
-    } else {
-        divQuantidadePessoas.style.display = 'none';
-        if (divNomeAusente) {
-            divNomeAusente.style.display = 'none';
-        }
-        botao1.style.display = 'none';
-        botao2.style.display = 'none';
-    }
-}
-
-var checkboxes = document.querySelectorAll('input[name="presenca"]');
-checkboxes.forEach(function (checkbox) {
-    checkbox.addEventListener('change', toggleQuantidadePessoas);
-});
+//       var inputContainer = document.getElementById('inputContainer');
+//       inputContainer.innerHTML = '';
+//   }
+// });

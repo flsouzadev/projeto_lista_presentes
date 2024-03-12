@@ -88,3 +88,20 @@ p {
   justify-content: center;
   color: #000000;
 }
+
+.map-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh; /* Ou ajuste a altura conforme necessário */
+}
+
+.map-container iframe {
+  border: 0;
+}
+
+.disabled-item {
+  text-decoration: line-through;
+  color: #999;
+}
