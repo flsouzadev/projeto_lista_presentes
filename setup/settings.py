@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'emoji',
     'apps.users.apps.UsersConfig',
 ]
 
@@ -124,7 +123,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'setup/static')
+    os.path.join(BASE_DIR, 'setup/static/')
 ]
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
