@@ -30,8 +30,8 @@ SECRET_KEY = str(os.getenv('SECRET-KEY'))
 DEBUG = True
 
 '''liberar para producao'''
-# ALLOWED_HOSTS = ['.vercel.app']
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['.vercel.app']
+# ALLOWED_HOSTS = ['*']
 
 
 
