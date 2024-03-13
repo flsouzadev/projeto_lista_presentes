@@ -31,7 +31,7 @@ DEBUG = True
 # DEBUG = False
 
 
-ALLOWED_HOSTS = ['.vercel/apps']
+ALLOWED_HOSTS = ['.vercel.app']
 
 
 # Application definition
