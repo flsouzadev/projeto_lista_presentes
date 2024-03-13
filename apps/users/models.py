@@ -14,39 +14,37 @@ class Convidado(models.Model):
     def __str__(self):
         return self.nome
     
-    
-
-class Item(models.Model):
-    nome = models.CharField(max_length=100)
-
-    def __str__(self):
-        return self.nome
-
 
 class AreaDeServico(models.Model):
-    item = models.ForeignKey(Item, on_delete=models.CASCADE)
+    item = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.item
 
 class Banheiro(models.Model):
-    item = models.ForeignKey(Item, on_delete=models.CASCADE)
+    item = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.item
 
 class Quarto(models.Model):
-    item = models.ForeignKey(Item, on_delete=models.CASCADE)
+    item = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.item
 
 class Cozinha(models.Model):
-    item = models.ForeignKey(Item, on_delete=models.CASCADE)
+    item = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.item
 
 class Outros(models.Model):
-    item = models.ForeignKey(Item, on_delete=models.CASCADE)
-    
-    
+    item = models.CharField(max_length=100)
 
+    def __str__(self):
+        return self.item
 
-class Area(models.Model):
-    nome = models.CharField(max_length=100)
-
-class Item2(models.Model):
-    area = models.ForeignKey(Area, on_delete=models.CASCADE)
-    nome = models.CharField(max_length=100)
 
 
 

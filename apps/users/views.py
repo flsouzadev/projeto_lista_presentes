@@ -44,11 +44,22 @@ def confirmacao(request):
 
             all_values_list = area_servico + banheiro + quarto + cozinha + outros
 
-            print(all_values_list)
-            
             if Convidado.objects.filter(rg=rg_presente).exists():
                 messages.add_message(request, constants.ERROR, f"{nome_presente}, você já confirmou presença!")
                 return redirect('confirmacao')
+            
+                        # Consulta para obter todos os presentes(brindes)
+            qtd_presentes = Convidado.objects.exclude(presente=None)
+            array_presentes=[]
+            # Iterando sobre os convidados presentes e imprimindo seus nomes
+            for cada_presente in qtd_presentes:
+                array_presentes.append(cada_presente)
+                
+                dados= [array_presentes for array_presentes in all_values_list]
+                # for array_presentes in all_values_list:
+                print(dados)
+                    
+                return render(request, 'users/confirmacao.html', {"cada_presente": dados})
 
             if 'outros' in all_values_list:
                 if len(all_values_list) == 1:

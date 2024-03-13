@@ -118,60 +118,61 @@
   <h2>Lista de Presentes<h2>
   <h5>Área de Serviço</h5>
   <ul>
-      <li><input type="checkbox" id="item1" name="area_servico[]" value="vassoura" disabled class="disabled-item"> <label for="item1">Vassoura</label></li>
-      <li><input type="checkbox" id="item2" name="area_servico[]" value="rodo" disabled class="disabled-item"> <label for="item2">Rodo</label></li>
-      <li><input type="checkbox" id="item3" name="area_servico[]" value="pá" disabled class="disabled-item"> <label for="item3">Pá</label></li>
-      <li><input type="checkbox" id="item4" name="area_servico[]" value="pano de limpeza" disabled class="disabled-item"> <label for="item4">Pano de Limpeza</label></li>
-      <li><input type="checkbox" id="item5" name="area_servico[]" value="escova de limpeza" disabled class="disabled-item"> <label for="item5">Escova de Limpeza</label></li>
-      <li><input type="checkbox" id="item6" name="area_servico[]" value="pregador de roupa" disabled class="disabled-item"> <label for="item6">Pregador de Roupa</label></li>
-      <li><input type="checkbox" id="item7" name="area_servico[]" value="varal de chão" disabled class="disabled-item"> <label for="item7">Varal de Chão</label></li>
-      <li><input type="checkbox" id="item8" name="area_servico[]" value="balde" disabled class="disabled-item"> <label for="item8">Balde</label></li>
+   
+      <li><input type="checkbox" id="item1" name="area_servico[]" value="vassoura" disabled class="disabled-item" {% if 'vassoura' in cada_presente %} checked {% endif %}> <label for="item1">Vassoura</label></li>
+      <li><input type="checkbox" id="item2" name="area_servico[]" value="rodo" disabled class="disabled-item" {% if 'rodo' in cada_presente %} checked {% endif %}> <label for="item2">Rodo</label></li>
+      <li><input type="checkbox" id="item3" name="area_servico[]" value="pá" disabled class="disabled-item" {% if 'pá' in cada_presente %} checked {% endif %}> <label for="item3">Pá</label></li>
+      <li><input type="checkbox" id="item4" name="area_servico[]" value="pano de limpeza" disabled class="disabled-item" {% if 'pano de limpeza' in cada_presente %} checked {% endif %}> <label for="item4">Pano de Limpeza</label></li>
+      <li><input type="checkbox" id="item5" name="area_servico[]" value="escova de limpeza" disabled class="disabled-item" {% if 'escova de limpeza' in cada_presente %} checked {% endif %}> <label for="item5">Escova de Limpeza</label></li>
+      <li><input type="checkbox" id="item6" name="area_servico[]" value="pregador de roupa" disabled class="disabled-item" {% if 'pregador de roupa' in cada_presente %} checked {% endif %}> <label for="item6">Pregador de Roupa</label></li>
+      <li><input type="checkbox" id="item7" name="area_servico[]" value="varal de chão" disabled class="disabled-item" {% if 'varal de chão' in cada_presente %} checked {% endif %}> <label for="item7">Varal de Chão</label></li>
+      <li><input type="checkbox" id="item8" name="area_servico[]" value="balde" disabled class="disabled-item" {% if 'balde' in cada_presente %} checked {% endif %}> <label for="item8">Balde</label></li>
   </ul>
   
   <h5>Banheiro</h5>
   <ul>
-      <li><input type="checkbox" id="item9" name="banheiro[]" value="toalha de banho" disabled class="disabled-item"> <label for="item9">Toalha de Banho</label></li>
-      <li><input type="checkbox" id="item10" name="banheiro[]" value="toalha de rosto" disabled class="disabled-item"> <label for="item10">Toalha de Rosto</label></li>
-      <li><input type="checkbox" id="item11" name="banheiro[]" value="toalha de piso" disabled class="disabled-item"> <label for="item11">Toalha de Piso</label></li>
-      <li><input type="checkbox" id="item12" name="banheiro[]" value="lixeira para banheiro" disabled class="disabled-item"> <label for="item12">Lixeira para Banheiro</label></li>
-      <li><input type="checkbox" id="item13" name="banheiro[]" value="escova sanitária" disabled class="disabled-item"> <label for="item13">Escova Sanitária</label></li>
-      <li><input type="checkbox" id="item14" name="banheiro[]" value="tapetes" disabled class="disabled-item"> <label for="item14">Tapetes</label></li>
+      <li><input type="checkbox" id="item9" name="banheiro[]" value="toalha de banho" disabled class="disabled-item" {% if 'toalha de banho' in cada_presente %} checked {% endif %}> <label for="item9">Toalha de Banho</label></li>
+      <li><input type="checkbox" id="item10" name="banheiro[]" value="toalha de rosto" disabled class="disabled-item" {% if 'toalha de rosto' in cada_presente %} checked {% endif %}> <label for="item10">Toalha de Rosto</label></li>
+      <li><input type="checkbox" id="item11" name="banheiro[]" value="toalha de piso" disabled class="disabled-item" {% if 'toalha de piso' in cada_presente %} checked {% endif %}> <label for="item11">Toalha de Piso</label></li>
+      <li><input type="checkbox" id="item12" name="banheiro[]" value="lixeira para banheiro" disabled class="disabled-item" {% if 'lixeira para banheiro' in cada_presente %} checked {% endif %}> <label for="item12">Lixeira para Banheiro</label></li>
+      <li><input type="checkbox" id="item13" name="banheiro[]" value="escova sanitária" disabled class="disabled-item" {% if 'escova sanitária' in cada_presente %} checked {% endif %}> <label for="item13">Escova Sanitária</label></li>
+      <li><input type="checkbox" id="item14" name="banheiro[]" value="tapetes" disabled class="disabled-item" {% if 'tapetes' in cada_presente %} checked {% endif %}> <label for="item14">Tapetes</label></li>
   </ul>
 
   <h5>Quarto</h5>
   <ul>
-      <li><input type="checkbox" id="item15" name="quarto[]" value="cabides" disabled class="disabled-item"> <label for="item15">Cabides</label></li>
-      <li><input type="checkbox" id="item16" name="quarto[]" value="jogo de lençol (cama casal padrão - 1,88 x 1,38)" disabled class="disabled-item"> <label for="item16">Jogo de Lençol (Cama Casal Padrão - 1,88 x 1,38)</label></li>
-      <li><input type="checkbox" id="item17" name="quarto[]" value="coberta" disabled class="disabled-item"> <label for="item17">Coberta</label></li>
-      <li><input type="checkbox" id="item18" name="quarto[]" value="colcha" disabled class="disabled-item"> <label for="item18">Colcha</label></li>
-      <li><input type="checkbox" id="item19" name="quarto[]" value="fronhas" disabled class="disabled-item"> <label for="item19">Fronhas</label></li>
+      <li><input type="checkbox" id="item15" name="quarto[]" value="cabides" disabled class="disabled-item" {% if 'cabides' in cada_presente %} checked {% endif %}> <label for="item15">Cabides</label></li>
+      <li><input type="checkbox" id="item16" name="quarto[]" value="jogo de lençol (cama casal padrão - 1,88 x 1,38)" disabled class="disabled-item" {% if 'jogo de lençol (cama casal padrão - 1,88 x 1,38)' in cada_presente %} checked {% endif %}> <label for="item16">Jogo de Lençol (Cama Casal Padrão - 1,88 x 1,38)</label></li>
+      <li><input type="checkbox" id="item17" name="quarto[]" value="coberta" disabled class="disabled-item" {% if 'coberta' in cada_presente %} checked {% endif %}> <label for="item17">Coberta</label></li>
+      <li><input type="checkbox" id="item18" name="quarto[]" value="colcha" disabled class="disabled-item" {% if 'colcha' in cada_presente %} checked {% endif %}> <label for="item18">Colcha</label></li>
+      <li><input type="checkbox" id="item19" name="quarto[]" value="fronhas" disabled class="disabled-item" {% if 'fronhas' in cada_presente %} checked {% endif %}> <label for="item19">Fronhas</label></li>
   </ul>
 
   <h5>Cozinha</h5>
   <ul>
-      <li><input type="checkbox" id="item20" name="cozinha[]" value="espremedor de batata" disabled class="disabled-item"> <label for="item20">Espremedor de Batata</label></li>
-      <li><input type="checkbox" id="item21" name="cozinha[]" value="potes herméticos" disabled class="disabled-item"> <label for="item21">Potes Herméticos</label></li>
-      <li><input type="checkbox" id="item22" name="cozinha[]" value="descanso de panela" disabled class="disabled-item"> <label for="item22">Descanso de Panela</label></li>
-      <li><input type="checkbox" id="item23" name="cozinha[]" value="copo de medida" disabled class="disabled-item"> <label for="item23">Copo de Medida</label></li>
-      <li><input type="checkbox" id="item24" name="cozinha[]" value="assadeiras" disabled class="disabled-item"> <label for="item24">Assadeiras</label></li>
-      <li><input type="checkbox" id="item25" name="cozinha[]" value="pratos" disabled class="disabled-item"> <label for="item25">Pratos</label></li>
-      <li><input type="checkbox" id="item26" name="cozinha[]" value="escorredor de massa" disabled class="disabled-item"> <label for="item26">Escorredor de Massa</label></li>
-      <li><input type="checkbox" id="item27" name="cozinha[]" value="escorredor de louças" disabled class="disabled-item"> <label for="item27">Escorredor de Louças</label></li>
-      <li><input type="checkbox" id="item28" name="cozinha[]" value="peneira média" disabled class="disabled-item"> <label for="item28">Peneira Média</label></li>
-      <li><input type="checkbox" id="item29" name="cozinha[]" value="pano de prato"disabled class="disabled-item"> <label for="item29">Pano de Prato</label></li>
-      <li><input type="checkbox" id="item30" name="cozinha[]" value="pano de pia" disabled class="disabled-item"> <label for="item30">Pano de Pia</label></li>
-      <li><input type="checkbox" id="item31" name="cozinha[]" value="saleiro" disabled class="disabled-item"> <label for="item31">Saleiro</label></li>
-      <li><input type="checkbox" id="item32" name="cozinha[]" value="luva termica" disabled class="disabled-item"> <label for="item32">Luva Térmica</label></li>
-      <li><input type="checkbox" id="item33" name="cozinha[]" value="jogo americano" disabled class="disabled-item"> <label for="item33">Jogo Americano</label></li>
-      <li><input type="checkbox" id="item34" name="cozinha[]" value="rodinho de pia" disabled class="disabled-item"> <label for="item34">Rodinho de Pia</label></li>
-      <li><input type="checkbox" id="item35" name="cozinha[]" value="jogo de talheres" disabled class="disabled-item"> <label for="item35">Jogo de Talheres</label></li>
-      <li><input type="checkbox" id="item36" name="cozinha[]" value="boleira" disabled class="disabled-item"> <label for="item36">Boleira</label></li>
-      <li><input type="checkbox" id="item37" name="cozinha[]" value="tábua de frios" disabled class="disabled-item"> <label for="item37">Tábua de Frios</label></li>
-      <li><input type="checkbox" id="item38" name="cozinha[]" value="forma de bolo redonda" disabled class="disabled-item"> <label for="item38">Forma de Bolo Redonda</label></li>
+      <li><input type="checkbox" id="item20" name="cozinha[]" value="espremedor de batata" disabled class="disabled-item" {% if 'espremedor de batata' in cada_presente %} checked {% endif %}> <label for="item20">Espremedor de Batata</label></li>
+      <li><input type="checkbox" id="item21" name="cozinha[]" value="potes herméticos" disabled class="disabled-item" {% if 'potes herméticos' in cada_presente %} checked {% endif %}> <label for="item21">Potes Herméticos</label></li>
+      <li><input type="checkbox" id="item22" name="cozinha[]" value="descanso de panela" disabled class="disabled-item" {% if 'descanso de panela' in cada_presente %} checked {% endif %}> <label for="item22">Descanso de Panela</label></li>
+      <li><input type="checkbox" id="item23" name="cozinha[]" value="copo de medida" disabled class="disabled-item" {% if 'copo de medida' in cada_presente %} checked {% endif %}> <label for="item23">Copo de Medida</label></li>
+      <li><input type="checkbox" id="item24" name="cozinha[]" value="assadeiras" disabled class="disabled-item" {% if 'assadeiras' in cada_presente %} checked {% endif %}> <label for="item24">Assadeiras</label></li>
+      <li><input type="checkbox" id="item25" name="cozinha[]" value="pratos" disabled class="disabled-item" {% if 'pratos' in cada_presente %} checked {% endif %} <label for="item25">Pratos</label></li>
+      <li><input type="checkbox" id="item26" name="cozinha[]" value="escorredor de massa" disabled class="disabled-item" {% if 'escorredor de massa' in cada_presente %} checked {% endif %}> <label for="item26">Escorredor de Massa</label></li>
+      <li><input type="checkbox" id="item27" name="cozinha[]" value="escorredor de louças" disabled class="disabled-item" {% if 'escorredor de louças' in cada_presente %} checked {% endif %}> <label for="item27">Escorredor de Louças</label></li>
+      <li><input type="checkbox" id="item28" name="cozinha[]" value="peneira média" disabled class="disabled-item" {% if 'peneira média' in cada_presente %} checked {% endif %}> <label for="item28">Peneira Média</label></li>
+      <li><input type="checkbox" id="item29" name="cozinha[]" value="pano de prato"disabled class="disabled-item" {% if 'pano de prato' in cada_presente %} checked {% endif %}> <label for="item29">Pano de Prato</label></li>
+      <li><input type="checkbox" id="item30" name="cozinha[]" value="pano de pia" disabled class="disabled-item" {% if 'pano de pia' in cada_presente %} checked {% endif %}> <label for="item30">Pano de Pia</label></li>
+      <li><input type="checkbox" id="item31" name="cozinha[]" value="saleiro" disabled class="disabled-item" {% if 'saleiro' in cada_presente %} checked {% endif %}> <label for="item31">Saleiro</label></li>
+      <li><input type="checkbox" id="item32" name="cozinha[]" value="luva termica" disabled class="disabled-item" {% if 'luva termica' in cada_presente %} checked {% endif %} <label for="item32">Luva Térmica</label></li>
+      <li><input type="checkbox" id="item33" name="cozinha[]" value="jogo americano" disabled class="disabled-item" {% if 'jogo americano' in cada_presente %} checked {% endif %}> <label for="item33">Jogo Americano</label></li>
+      <li><input type="checkbox" id="item34" name="cozinha[]" value="rodinho de pia" disabled class="disabled-item" {% if 'rodinho de pia' in cada_presente %} checked {% endif %}> <label for="item34">Rodinho de Pia</label></li>
+      <li><input type="checkbox" id="item35" name="cozinha[]" value="jogo de talheres" disabled class="disabled-item" {% if 'jogo de talheres' in cada_presente %} checked {% endif %}> <label for="item35">Jogo de Talheres</label></li>
+      <li><input type="checkbox" id="item36" name="cozinha[]" value="boleira" disabled class="disabled-item" {% if 'boleira' in cada_presente %} checked {% endif %}> <label for="item36">Boleira</label></li>
+      <li><input type="checkbox" id="item37" name="cozinha[]" value="tábua de frios" disabled class="disabled-item" {% if 'tábua de frios' in cada_presente %} checked {% endif %}> <label for="item37">Tábua de Frios</label></li>
+      <li><input type="checkbox" id="item38" name="cozinha[]" value="forma de bolo redonda" disabled class="disabled-item" {% if 'forma de bolo redonda' in cada_presente %} checked {% endif %}> <label for="item38">Forma de Bolo Redonda</label></li>
   </ul>
   <h5>Outros</h5>
   <ul>
-      <input type="checkbox" id="item39" name="quarto[]" value="outros" disabled class="disabled-item"> <label for="item39">Outros</label>
+      <input type="checkbox" id="item39" name="quarto[]" value="outros" disabled class="disabled-item" {% if 'outros' in cada_presente %} checked {% endif %}> <label for="item39">Outros</label>
   </ul>
   <button
   id="btn_conclusao"
