@@ -23,7 +23,7 @@
             "dest": "/static/$1"
         },
         {
-            "handles": "filesystem"
+            "handle": "filesystem"
         },
         {
             "src": "/confirmacao/",
