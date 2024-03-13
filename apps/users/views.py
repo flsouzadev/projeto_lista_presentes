@@ -1,3 +1,4 @@
+import sqlite3
 from django.shortcuts import render, redirect
 from apps.users.models import Convidado
 from django.contrib.messages import constants
@@ -20,15 +21,21 @@ def confirmacao(request):
             else:
                 presenca = True
 
-            if Convidado.objects.filter(rg=rg_ausente).exists():
-                messages.add_message(request, constants.ERROR, f"{nome_presente}, você já confirmou presença!")
-                return redirect('confirmacao')
-            else:
-                convidado = Convidado(nome=nome_ausente, rg=rg_ausente, presente=presente, presenca=presenca)
-                convidado.save()  # Salvando no banco de dados
-                messages.add_message(request, constants.SUCCESS, f"{nome_ausente}, sua confirmação foi realizada com sucesso!")
+            try:
+                
 
-            return redirect('confirmacao')
+                if Convidado.objects.filter(rg=rg_ausente).exists():
+                    messages.add_message(request, constants.ERROR, f"{nome_presente}, você já confirmou presença!")
+                    return redirect('confirmacao')
+                else:
+                    convidado = Convidado(nome=nome_ausente, rg=rg_ausente, presente=presente, presenca=presenca)
+                    convidado.save()  # Salvando no banco de dados
+                    messages.add_message(request, constants.SUCCESS, f"{nome_ausente}, sua confirmação foi realizada com sucesso!")
+
+                return redirect('confirmacao')
+            
+            except (sqlite3.NotSupportedError, TypeError):
+                pass
 
         else:
             # Lógica para tratamento dos campos nomePresente, rgPresente
