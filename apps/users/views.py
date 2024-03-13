@@ -21,21 +21,16 @@ def confirmacao(request):
             else:
                 presenca = True
 
-            try:
-                
 
-                if Convidado.objects.filter(rg=rg_ausente).exists():
-                    messages.add_message(request, constants.ERROR, f"{nome_presente}, você já confirmou presença!")
-                    return redirect('confirmacao')
-                else:
-                    convidado = Convidado(nome=nome_ausente, rg=rg_ausente, presente=presente, presenca=presenca)
-                    convidado.save()  # Salvando no banco de dados
-                    messages.add_message(request, constants.SUCCESS, f"{nome_ausente}, sua confirmação foi realizada com sucesso!")
-
+            if Convidado.objects.filter(rg=rg_ausente).exists():
+                messages.add_message(request, constants.ERROR, f"{nome_presente}, você já confirmou presença!")
                 return redirect('confirmacao')
-            
-            except (sqlite3.NotSupportedError, TypeError):
-                pass
+            else:
+                convidado = Convidado(nome=nome_ausente, rg=rg_ausente, presente=presente, presenca=presenca)
+                convidado.save()  # Salvando no banco de dados
+                messages.add_message(request, constants.SUCCESS, f"{nome_ausente}, sua confirmação foi realizada com sucesso!")
+
+            return redirect('confirmacao')
 
         else:
             # Lógica para tratamento dos campos nomePresente, rgPresente
