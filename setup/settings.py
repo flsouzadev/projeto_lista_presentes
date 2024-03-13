@@ -148,8 +148,3 @@ MESSAGE_TAGS = {
     constants.INFO: 'alert-info',
     constants.WARNING: 'alert-warning',
 }
-
-if os.environ.get("VERCEL"):
-    STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
-
-    STATICFILES_STORAGE = "whitenoise.storage.CompressdManifestStaticFilesStorage"
