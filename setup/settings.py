@@ -28,10 +28,11 @@ SECRET_KEY = str(os.getenv('SECRET-KEY'))
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-# DEBUG = False
 
+'''liberar para producao'''
+# ALLOWED_HOSTS = ['.vercel.app']
+ALLOWED_HOSTS = ['*']
 
-ALLOWED_HOSTS = ['.vercel.app']
 
 
 # Application definition
@@ -125,7 +126,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'setup/static/')
+    os.path.join(BASE_DIR, 'templates/static/')
 ]
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
