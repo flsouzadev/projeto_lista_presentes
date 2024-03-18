@@ -23,7 +23,7 @@ def confirmacao(request):
 
 
             if Convidado.objects.filter(rg=rg_ausente).exists():
-                messages.add_message(request, constants.ERROR, f"{nome_presente}, você já confirmou presença!")
+                messages.add_message(request, constants.ERROR, f"{nome_ausente}, você já confirmou presença!")
                 return redirect('confirmacao')
             else:
                 convidado = Convidado(nome=nome_ausente, rg=rg_ausente, presente=presente, presenca=presenca)
